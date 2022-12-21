@@ -1,0 +1,18 @@
+{
+  "name": "newman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "newmanAgustin:json": "newman run collections\\RicardoFort.json",
+    "newmanAgustin:link": "newman run https://api.postman.com/collections/24949467-92e587e5-5a78-4294-9d5f-836cbe67992b?access_key=PMAT-01GMP08NRBCDX13VKB54NV30KX",
+    "newmanAgustin:report": "newman run collections\\RicardoFort.json -r htmlextra"
+  
+  },
+  "author": "Agustin Spitale",
+  "license": "ISC",
+  "dependencies": {
+    "newman": "^5.3.2",
+    "newman-reporter-htmlextra": "^1.22.11"
+  }
+}

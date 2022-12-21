@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "92e587e5-5a78-4294-9d5f-836cbe67992b",
+		"name": "RicardoFort",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24949467"
+	},
+	"item": [
+		{
+			"name": "Post Prueba",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"//TEST DE RESPONSE STATUS 200\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"//TEST DE RESPONSE STATUS [200,201]\r",
+							"pm.test(\"Status is 200 OK OR 201\", function(){\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201])\r",
+							"}\r",
+							")\r",
+							"var random_email = pm.collectionVariables.get(\"RANDOM_EMAIL\")\r",
+							"//SACAR DATOS DEL JSON DE RESPONSE Y CORROBORAR ALGUN CAMPO (linea 14)\r",
+							"pm.test(\"data.key igual a \"+ random_email, function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(jsonData.data.key).to.eql(random_email);\r",
+							"});\r",
+							"\r",
+							"//TIEMPO DE RESPUESTA MENOR A 200MS\r",
+							" pm.test(\"Response time is less than 200ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							" });\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Generar variable dinamica y settear como variable de entorno p/ el body --> validar en test\r",
+							"\r",
+							"//generar string random\r",
+							"\r",
+							"const random_email = pm.variables.replaceIn(\"{{$randomEmail}}\")\r",
+							"\r",
+							"pm.collectionVariables.set(\"RANDOM_EMAIL\", random_email)\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"key\": \"{{RANDOM_EMAIL}}\" \n\t\n}"
+				},
+				"url": {
+					"raw": "https://postman-echo.com/post",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "RANDOM_EMAIL",
+			"value": ""
+		}
+	]
+}
