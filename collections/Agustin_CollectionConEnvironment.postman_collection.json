@@ -1,0 +1,36 @@
+{
+	"info": {
+		"_postman_id": "5b4d7cf0-8fce-47c4-8cbc-982f5c9d72dc",
+		"name": "Agustin_CollectionConEnvironment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24949467"
+	},
+	"item": [
+		{
+			"name": "Add pet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"doggie\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_petstore}}/pet",
+					"host": [
+						"{{base_url_petstore}}"
+					],
+					"path": [
+						"pet"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
