@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "newmanAgustin:json": "newman run collections\\RicardoFort.json",
+    "newmanAgustin:json": "newman run collections/RicardoFort.json",
     "newmanAgustin:link": "newman run https://api.postman.com/collections/24949467-92e587e5-5a78-4294-9d5f-836cbe67992b?access_key=PMAT-01GMP08NRBCDX13VKB54NV30KX",
-    "newmanAgustin:report": "newman run collections\\RicardoFort.json -r htmlextra"
-  
+    "newmanAgustin:report": "newman run collections/RicardoFort.json -r htmlextra",
+    "newmanAgustin:withEnv": "newman run collectionsAgustin_CollectionConEnvironment.postman_collection.json -e Enviroments\\AgustinEnv.postman_environment.json"
   },
   "author": "Agustin Spitale",
   "license": "ISC",
