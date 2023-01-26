@@ -2,7 +2,7 @@ name: Newman CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "SpitaleA-patch-1" ]
 
 jobs:
   build:
