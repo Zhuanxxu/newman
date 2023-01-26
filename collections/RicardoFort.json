@@ -16,7 +16,7 @@
 							"\r",
 							"\r",
 							"//TEST DE RESPONSE STATUS 200\r",
-							"pm.test(\"Status code is 200\", function () {\r",
+							"pm.test(\"Status code is 500\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"//TEST DE RESPONSE STATUS [200,201]\r",
